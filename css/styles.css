@@ -57,6 +57,11 @@ h1, h2, h3 {
     font-weight: 300;
 }
 
+h3 {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
 h1 span {
     font-weight: 600;
 }
@@ -84,6 +89,7 @@ h1 span {
     grid-area: main;
     display: grid;
     background-color: #E5E8E8;
+    color: darkslategrey;
 }
 
 .main-header {
@@ -129,8 +135,30 @@ h1 span {
     width: 95vw;
 }
 
-#Layer_1 {
+#bell {
     width: 25px;
+}
+
+.social-contents {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.social-container {
+    height: 150px;
+    width: 30%;
+    border: 1px darkslategrey solid;
+    border-radius: 5px;
+}
+
+.social-text {
+    float: right;
+}
+
+.social-image {
+    width: 50px;
 }
 
 @media (min-width: 768px) {
