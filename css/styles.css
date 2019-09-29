@@ -139,6 +139,18 @@ h1 span {
     width: 25px;
 }
 
+.traffic, .daily,
+.users, .social,
+.new-member, .recent-activity,
+.message, .settings {
+    padding: 20px;
+    border-bottom: .5px darkslategrey solid;
+}
+
+.daily, .new-member, .message {
+    border-right: 1px darkslategrey solid;
+}
+
 .social-contents {
     display: flex;
     flex-direction: row;
@@ -151,14 +163,45 @@ h1 span {
     width: 30%;
     border: 1px darkslategrey solid;
     border-radius: 5px;
+    display: flex;
+    margin-bottom: 20px;
 }
 
-.social-text {
-    float: right;
+.social-color {
+    fill: white;
 }
 
 .social-image {
-    width: 50px;
+    margin: 20px;
+}
+
+
+.social-text > p:nth-child(1) {
+    color: #1ABC9C;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.social-text > p:nth-child(2) {
+    font-size: 3rem;
+    margin: 0 auto;
+}
+
+
+#twitter, #facebook, #googleplus {
+    width: 50%;
+    height: 50%;
+    position: relative;
+    top: 25%;
+    left: 25%;
+}
+
+.social-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #1ABC9C;
 }
 
 @media (min-width: 768px) {
