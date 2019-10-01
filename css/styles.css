@@ -66,8 +66,6 @@
 
 #bell-icon {
     padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
     border-right: 1px darkslategrey solid;
 }
 
@@ -98,28 +96,42 @@ h1 span {
     justify-content: space-evenly;
 }
 
+.navigation a:first-child {
+    border-bottom: 5px #D2B4DE solid;
+    border-left: 5px #148F77 solid;
+    border-right: 5px #148F77 solid;
+}
+
 .navigation img {
     width: 40px;
-    padding: 10px 0;
+    padding: 10px;
 }
 
 .main {
     grid-area: main;
     display: grid;
-    background-color: #E5E8E8;
+    background-color: #F8F9F9;
     color: darkslategrey;
 }
 
 .main-header {
-    padding: 0 20px;
     border-bottom: 1px darkslategrey solid;
+    background-color: #E5E8E8;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
 }   
 
 .headline {
-    padding-right: 20px;
+    padding: 20px;
     margin: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    flex-basis: 10%;
+}
+
+.main-header-search {
+    flex-basis: 90%;
+    text-align: center;
+    padding-right: 20px;
 }
 
 .main-header-search input {
@@ -148,17 +160,40 @@ input, textarea, button, select {
 }
 
 .widget-container-full, .widget-container-half {
-    width: 95vw;
+    width: 90vw;
 }
 
 #bell {
     width: 45px;
 }
 
+.traffic-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.traffic-nav {
+    flex-basis: 90%;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+.traffic-nav-link {
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 50px;
+}
+
+.traffic-nav-link:active {
+    background-color: #D2B4DE;
+    color: white;   
+}
+
 .traffic, .users, .daily,
 .social, .new-member, .recent-activity,
 .new-member, .message, .settings {
-    padding: 10px;
+    padding: 20px;
     border-bottom: .5px darkslategrey solid;
 }
 
@@ -216,6 +251,7 @@ input, textarea, button, select {
 
 .members-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 20px 0;
     margin: 0px;
@@ -225,10 +261,6 @@ input, textarea, button, select {
 
 .members-container:last-child {
     border: none;
-}
-
-.members-container > p {
-    text-align: right;
 }
 
 .members-text p {
@@ -241,8 +273,8 @@ input, textarea, button, select {
 }
 
 .members-text {
-    padding-left: 10px;
-    text-align: left;
+    padding-top: 10px;
+    text-align: center;
 }
 
 .lessthan {
@@ -295,6 +327,19 @@ input, textarea, button, select {
     justify-content: space-between;
 }
 
+.settings p {
+    display: inline-block;
+    margin-right: auto;
+}
+
+.toggle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 375px;
+    padding-bottom: 22px
+}
+
 #save, #cancel {
     width: 47.5%;
     margin: 20px 0;
@@ -302,6 +347,7 @@ input, textarea, button, select {
 
 #timezone {
     color: darkslategrey;
+    height: 43px;
 }
 
 @media (min-width: 768px) {
@@ -347,7 +393,6 @@ input, textarea, button, select {
     .navigation {
         flex-direction: column;
         justify-content: flex-start;
-        padding-left: 15px;
     }
 
     .navigation img {
@@ -371,14 +416,18 @@ input, textarea, button, select {
     }
 
     .main-header {
-        display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        border-bottom: none;
+        flex-wrap: nowrap;
     }
 
-    .headline {
-        border-right: 1px darkslategrey solid;
+    .main-header-search {
+        border-bottom: 1px darkslategrey solid;
+        border-left: 1px darkslategrey solid;
+        padding: 13px;
+        text-align: right;
     }
 
     .main-header-search input {
@@ -388,5 +437,51 @@ input, textarea, button, select {
 
     .daily, .new-member, .message {
         border-right: 1px darkslategrey solid;
+    }
+
+    .navigation a:first-child {
+        border-left: 5px #D2B4DE solid;
+        border-top: 5px #148F77 solid;
+        border-bottom: 5px #148F77 solid;
+        border-right: none;
+        margin-top: 10px;
+        padding-left: 5px;
+    }
+    
+    .navigation a {
+        padding: 10px;
+    }
+
+    .navigation img {
+        width: 30px;
+    }
+
+    .headline {
+        background-color: #F8F9F9;
+    }
+
+    .members-container {
+        flex-direction: row;
+    }
+
+    .date, .lessthan {
+        margin-left: auto;
+    }
+
+    .members-text {
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    .members-text:first-child {
+        overflow-wrap: break-word;
+    }
+
+    .traffic-header {
+        flex-direction: row;
+    }
+
+    .traffic-header h3 {
+        flex-basis: 80%;
     }
 }
