@@ -32,6 +32,10 @@
     align-items: center;
 }
 
+.header-name {
+    text-transform: capitalize;
+}
+
 #bell-icon,
 .header-image,
 .header-name {
@@ -97,7 +101,7 @@ h1 span {
 }
 
 .navigation a:first-child {
-    border-bottom: 5px #D2B4DE solid;
+    border-bottom: 5px #9B59B6 solid;
     border-left: 5px #148F77 solid;
     border-right: 5px #148F77 solid;
 }
@@ -110,7 +114,6 @@ h1 span {
 .main {
     grid-area: main;
     display: grid;
-    background-color: #F8F9F9;
     color: darkslategrey;
 }
 
@@ -186,8 +189,17 @@ input, textarea, button, select {
 }
 
 .traffic-nav-link:active {
-    background-color: #D2B4DE;
+    background-color: #9B59B6;
     color: white;   
+}
+
+.traffic, .users, .daily, 
+.alert, .main-header {
+    width: 90vw;
+}
+
+.main-header {
+    width: 100vw;
 }
 
 .traffic, .users, .daily,
@@ -275,6 +287,7 @@ input, textarea, button, select {
 .members-text {
     padding-top: 10px;
     text-align: center;
+    font-size: 14px;
 }
 
 .lessthan {
@@ -390,6 +403,12 @@ input, textarea, button, select {
         margin: 0 auto;
     }
 
+
+    .traffic, .users, .daily, 
+    .alert, .main-header {
+        width: auto;
+    }
+
     .navigation {
         flex-direction: column;
         justify-content: flex-start;
@@ -440,7 +459,7 @@ input, textarea, button, select {
     }
 
     .navigation a:first-child {
-        border-left: 5px #D2B4DE solid;
+        border-left: 5px #9B59B6 solid;
         border-top: 5px #148F77 solid;
         border-bottom: 5px #148F77 solid;
         border-right: none;
@@ -457,24 +476,7 @@ input, textarea, button, select {
     }
 
     .headline {
-        background-color: #F8F9F9;
-    }
-
-    .members-container {
-        flex-direction: row;
-    }
-
-    .date, .lessthan {
-        margin-left: auto;
-    }
-
-    .members-text {
-        padding-left: 10px;
-        text-align: left;
-    }
-
-    .members-text:first-child {
-        overflow-wrap: break-word;
+        background-color: white;
     }
 
     .traffic-header {
@@ -483,5 +485,22 @@ input, textarea, button, select {
 
     .traffic-header h3 {
         flex-basis: 80%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .date, .lessthan {
+        margin-left: auto;
+    }
+
+    .members-container {
+        flex-direction: row;
+    }
+
+    .members-text {
+        padding-left: 10px;
+        text-align: left;
+        height: 2.5em;
+        display: block;
     }
 }
